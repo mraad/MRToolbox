@@ -125,7 +125,7 @@ public class JobRunnerTool extends AbstractTool
         addParamFile(parameters, "Hadoop properties file", "in_hadoop_properties", prefix + "hadoop.properties");
         addParamString(parameters, "Hadoop user", "in_user", username);
         addParamString(parameters, "Remote input path", "in_input", "s3n://" + username + "/earthquakes.csv");
-        addParamString(parameters, "Remote join path", "in_join", "/user/" + username + "/world.json");
+        addParamString(parameters, "Remote join path", "in_join", "/user/" + username + "/features.json");
         addParamString(parameters, "Remote output path", "in_output", "/user/" + username + "/output");
         addParamString(parameters, "libjars", "in_libjars", "C:\\Program Files (x86)\\ArcGIS\\Desktop10.1\\java\\lib\\ext\\libs\\esri-geometry-api-1.1-SNAPSHOT.jar");
 

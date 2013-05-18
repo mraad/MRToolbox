@@ -135,7 +135,7 @@ public class ExportToHDFSTool extends AbstractTool
         addParamFile(parameters, "Hadoop properties file", "in_hadoop_prop", prefix + "hadoop.properties");
         addParamString(parameters, "Hadoop user", "in_hadoop_user", username);
         addParamFeatureLayer(parameters, "Input features", "in_features");
-        addParamString(parameters, "Remote output path", "in_output_path", "/user/" + username + "/world.json");
+        addParamString(parameters, "Remote output path", "in_output_path", "/user/" + username + "/features.json");
 
         return parameters;
     }
