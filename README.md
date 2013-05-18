@@ -49,3 +49,10 @@ Here is a sample hadoop.properties file content:
 
 ## JobRunnerTool
 ![JobRunnerTool](https://dl.dropboxusercontent.com/u/2193160/JobRunnerTool.png "Job Runnner Tool")
+
+This GP tool runs a map reduce job.  It performs a spatial join between a very large set of points and a set of polygons.
+The result of the job is a table where each row has two fields.  The first field is the polygon identifier, and the second field is the number of points in that polygon.
+A use case will be something like the following, a [GeoEventProcessor](http://www.esri.com/esri-news/arcnews/spring13articles/arcgis-enables-real-time-gis) is streaming data
+points into HDFS or into [S3](http://aws.amazon.com/s3/).  A Geo-Data Scientist that is using ArcMap has a set of polygons that needs data aggregation from that streaming data.
+He can launch a [Hadoop cluster from ArcMap](http://thunderheadxpler.blogspot.com/2013/05/bigdata-launch-cdh-on-ec2-from-arcmap.html), export the polygon, run the MapReduce job
+that points to the streaming data as input.  The resulting table is joined to the input polygon for symbolization and visualization.
