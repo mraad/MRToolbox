@@ -45,10 +45,6 @@ public class MRFunctionFactory implements IGPFunctionFactory
 
     public IGPFunction getFunction(final String s) throws IOException, AutomationException
     {
-        if (ImportFromHDFSTool.NAME.equalsIgnoreCase(s))
-        {
-            return new ImportFromHDFSTool();
-        }
         if (ExportToHDFSTool.NAME.equalsIgnoreCase(s))
         {
             return new ExportToHDFSTool();
@@ -62,16 +58,6 @@ public class MRFunctionFactory implements IGPFunctionFactory
 
     public IGPName getFunctionName(final String s) throws IOException, AutomationException
     {
-        if (ImportFromHDFSTool.NAME.equalsIgnoreCase(s))
-        {
-            final GPFunctionName functionName = new GPFunctionName();
-            functionName.setCategory(ImportFromHDFSTool.NAME);
-            functionName.setDescription(ImportFromHDFSTool.NAME);
-            functionName.setDisplayName(ImportFromHDFSTool.NAME);
-            functionName.setName(ImportFromHDFSTool.NAME);
-            functionName.setFactoryByRef(this);
-            return functionName;
-        }
         if (ExportToHDFSTool.NAME.equalsIgnoreCase(s))
         {
             final GPFunctionName functionName = new GPFunctionName();
@@ -98,7 +84,6 @@ public class MRFunctionFactory implements IGPFunctionFactory
     public IEnumGPName getFunctionNames() throws IOException, AutomationException
     {
         final EnumGPName nameArray = new EnumGPName();
-        nameArray.add(getFunctionName(ImportFromHDFSTool.NAME));
         nameArray.add(getFunctionName(ExportToHDFSTool.NAME));
         nameArray.add(getFunctionName(JobRunnerTool.NAME));
         return nameArray;

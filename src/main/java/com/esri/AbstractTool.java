@@ -4,6 +4,8 @@ import com.esri.arcgis.datasourcesfile.DEFile;
 import com.esri.arcgis.datasourcesfile.DEFileType;
 import com.esri.arcgis.datasourcesfile.DELayerType;
 import com.esri.arcgis.geodatabase.DEFeatureClassType;
+import com.esri.arcgis.geodatabase.DETable;
+import com.esri.arcgis.geodatabase.DETableType;
 import com.esri.arcgis.geodatabase.IGPMessages;
 import com.esri.arcgis.geoprocessing.BaseGeoprocessingTool;
 import com.esri.arcgis.geoprocessing.GPCompositeDataType;
@@ -14,6 +16,7 @@ import com.esri.arcgis.geoprocessing.GPLayerType;
 import com.esri.arcgis.geoprocessing.GPParameter;
 import com.esri.arcgis.geoprocessing.GPString;
 import com.esri.arcgis.geoprocessing.GPStringType;
+import com.esri.arcgis.geoprocessing.GPTableSchema;
 import com.esri.arcgis.geoprocessing.IGPEnvironmentManager;
 import com.esri.arcgis.geoprocessing.esriGPParameterDirection;
 import com.esri.arcgis.geoprocessing.esriGPParameterType;
@@ -150,6 +153,29 @@ public abstract class AbstractTool extends BaseGeoprocessingTool
         parameters.add(parameter);
     }
 
+    protected void addParamTable(
+            final IArray parameters,
+            final String displayName,
+            final String name,
+            final String value) throws IOException
+    {
+        final GPTableSchema tableSchema = new GPTableSchema();
+        tableSchema.setCloneDependency(true);
+
+        final GPParameter parameterOut = new GPParameter();
+        parameterOut.setDirection(esriGPParameterDirection.esriGPParameterDirectionOutput);
+        parameterOut.setDisplayName(displayName);
+        parameterOut.setName(name);
+        parameterOut.setParameterType(esriGPParameterType.esriGPParameterTypeRequired);
+        parameterOut.setDataTypeByRef(new DETableType());
+        final DETable table = new DETable();
+        table.setAsText(value);
+        parameterOut.setValueByRef(table);
+        parameterOut.setSchemaByRef(tableSchema);
+
+        parameters.add(parameterOut);
+    }
+
     protected void loadProperties(
             final Configuration configuration,
             final String propertiesPath) throws IOException
@@ -174,5 +200,4 @@ public abstract class AbstractTool extends BaseGeoprocessingTool
             final IArray parameters,
             final IGPMessages messages,
             final IGPEnvironmentManager environmentManager) throws Throwable;
-
 }

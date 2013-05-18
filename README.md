@@ -21,7 +21,7 @@ You must first clone and compile the Esri Geometry API
     $ mvn clean package
 
 ## Installing the extension in ArcMap
-Copy from the **target** folder the file **MRToolbox-1.0-SNAPSHOT.jar** and the folder **libs** into **Your ArcGIS Desktop Folder**\java\lib\ext.
+Copy from the **target** folder the file **MRToolbox-1.1-SNAPSHOT.jar** and the folder **libs** into **Your ArcGIS Desktop Folder**\java\lib\ext.
 
 Check out [this](http://help.arcgis.com/en/arcgisdesktop/10.0/help/index.html#/A_quick_tour_of_managing_tools_and_toolboxes/003q00000001000000/) to see how to add a Toolbox and a Tool to ArcMap.
 
