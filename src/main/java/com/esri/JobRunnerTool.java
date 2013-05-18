@@ -45,7 +45,9 @@ import java.util.regex.Pattern;
  */
 public class JobRunnerTool extends AbstractTool
 {
-    public final static String NAME = JobRunnerTool.class.getSimpleName();
+    private static final long serialVersionUID = -2087143833799387979L;
+
+    public static final String NAME = JobRunnerTool.class.getSimpleName();
 
     @Override
     protected void doExecute(
@@ -267,8 +269,8 @@ public class JobRunnerTool extends AbstractTool
         }
 
         String outputWSName = outputWSFile.getName();
-        IWorkspaceFactory workspaceFactory = null;
-        IFeatureWorkspace featureWorkspace = null;
+        IWorkspaceFactory workspaceFactory;
+        IFeatureWorkspace featureWorkspace;
 
         if (outputWSFile.exists() && outputWSFile.isDirectory())
         {

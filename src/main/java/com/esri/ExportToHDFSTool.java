@@ -30,7 +30,9 @@ import java.security.PrivilegedExceptionAction;
  */
 public class ExportToHDFSTool extends AbstractTool
 {
-    public final static String NAME = ExportToHDFSTool.class.getSimpleName();
+    private static final long serialVersionUID = -6111893544409469534L;
+
+    public static final String NAME = ExportToHDFSTool.class.getSimpleName();
 
     @Override
     protected void doExecute(

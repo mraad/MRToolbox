@@ -30,9 +30,9 @@ You should have something like the following:
 ![MRToolbox](https://dl.dropboxusercontent.com/u/2193160/MRToolbox.png "MR Toolbox")
 
 ## ExportToHDFSTool
-This GP tool exports a feature class from ArcMap into a Hadoop File System path in Esri JSON format.
-
 ![ExportToHDFSTool](https://dl.dropboxusercontent.com/u/2193160/ExportToHDFSTool.png "Export To HDFS Tool")
+
+This GP tool exports a feature class from ArcMap into a Hadoop File System path in Esri JSON format.
 
 Here is a sample hadoop.properties file content:
 
@@ -47,3 +47,5 @@ Here is a sample hadoop.properties file content:
     hadoop.rpc.socket.factory.class.default=org.apache.hadoop.net.SocksSocketFactory
     dfs.client.use.legacy.blockreader=true
 
+## JobRunnerTool
+![JobRunnerTool](https://dl.dropboxusercontent.com/u/2193160/JobRunnerTool.png "Job Runnner Tool")

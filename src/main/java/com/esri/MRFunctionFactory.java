@@ -21,8 +21,7 @@ import java.util.UUID;
 @ArcGISExtension(categories = {ArcGISCategories.GPFunctionFactories})
 public class MRFunctionFactory implements IGPFunctionFactory
 {
-
-    private static final long serialVersionUID = 1L;
+    private static final long serialVersionUID = -6366762606977787966L;
 
     private static final String NAME = "MRToolbox";
 
