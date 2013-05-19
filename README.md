@@ -1,7 +1,7 @@
 MRToolbox
 =========
 
-Export feature classes from ArcMap to Hadoop, run MapReduce jobs and import result back as features classes.
+Export feature classes from ArcMap to Hadoop, run MapReduce jobs and import result back into ArcMap as features classes.
 
 A use case will be something like the following, a [GeoEventProcessor](http://www.esri.com/esri-news/arcnews/spring13articles/arcgis-enables-real-time-gis) is streaming data
 points into HDFS or into [S3](http://aws.amazon.com/s3/).  A Geo-Data Scientist that is using ArcMap has a set of polygons that needs data aggregation from that streaming data.
@@ -29,7 +29,7 @@ You must first [git clone](http://gitref.org/creating/#clone) and compile the Es
     $ mvn clean package
 
 ## Installing the extension in ArcMap
-Copy from the **target** folder the file **MRToolbox-1.1-SNAPSHOT.jar** and the folder **libs** into the C:\Program Files (x86)\ArcGIS\Desktop10.1\java\lib\ext folder.
+Copy from the **target** folder the **MRToolbox-1.1-SNAPSHOT.jar** file and the **libs** folder into the C:\Program Files (x86)\ArcGIS\Desktop10.1\java\lib\ext folder.
 
 Before starting ArcMap, you have to adjust the ArcGIS JVM Heap values. Run as **administrator** JavaConfigTool located in C:\Program Files (x86)\ArcGIS\Desktop10.1\bin
 
