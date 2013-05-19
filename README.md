@@ -8,12 +8,6 @@ points into HDFS or into [S3](http://aws.amazon.com/s3/).  A Geo-Data Scientist 
 He can launch a [Hadoop cluster from ArcMap](http://thunderheadxpler.blogspot.com/2013/05/bigdata-launch-cdh-on-ec2-from-arcmap.html), export the polygons, run a MapReduce job
 that points to the streaming data as input for spatial analysis.  The result is joined back to the input polygons for symbolization and visualization.
 
-## Getting Started
-
-Make sure to install **arcobjects.jar** in your local [maven repo](http://maven.apache.org/guides/introduction/introduction-to-repositories.html). You can typically find it in C:\Program Files (x86)\ArcGIS\Desktop10.1\java\lib.
-
-    $ mvn install:install-file -Dfile=arcobjects.jar -DgroupId=com.esri -DartifactId=arcobjects -Dversion=10.1 -Dpackaging=jar -DgeneratePom=true
-
 ## GIS Tools for Hadoop
 
 This project depends on the [Esri Geometry API for Java](https://github.com/Esri/geometry-api-java) and borrows code from the [Spatial Framework for Hadoop](https://github.com/Esri/spatial-framework-for-hadoop).
@@ -25,6 +19,12 @@ You must first [git clone](http://gitref.org/creating/#clone) and compile the Es
     $ mvn install
 
 ## Compiling and packaging
+
+Make sure to install **arcobjects.jar** in your local [maven repo](http://maven.apache.org/guides/introduction/introduction-to-repositories.html). You can typically find it in C:\Program Files (x86)\ArcGIS\Desktop10.1\java\lib.
+
+    $ mvn install:install-file -Dfile=arcobjects.jar -DgroupId=com.esri -DartifactId=arcobjects -Dversion=10.1 -Dpackaging=jar -DgeneratePom=true
+
+clone and package:
 
     $ mvn clean package
 
